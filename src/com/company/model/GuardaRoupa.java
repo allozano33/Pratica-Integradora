@@ -4,25 +4,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public class GuardaRoupa {
 
-
-    private Integer contador = 0;
-    private HashMap<Integer, List<Roupa>> guardaRoupa;
+    private Integer contador;
+    private HashMap<Integer,List<Roupa>> guardaRoupa;
 
     public GuardaRoupa(Integer contador, HashMap<Integer, List<Roupa>> dicionario) {
         this.contador = contador;
         this.guardaRoupa = dicionario;
     }
 
-
-    public Integer mostrarRoupas(List<Roupa> listaDeRoupas) {
+    public Integer guardarRoupas(List<Roupa> listaDeRoupas){
         ++contador;
-        guardaRoupa.put(contador, listaDeRoupas);
+        guardaRoupa.put(contador,listaDeRoupas);
 
         return contador;
-
-
     }
 
     public void mostrarRoupas(){
@@ -37,11 +34,5 @@ public class GuardaRoupa {
 
     public List<Roupa> devolverRoupas(Integer codigo){
         return guardaRoupa.get(codigo);
-
-
-
-}
-
-    public void guardarRoupas(List<Roupa> roupas) {
     }
 }
