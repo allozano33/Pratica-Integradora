@@ -8,7 +8,7 @@ public class GuardaRoupa {
 
 
     private Integer contador = 0;
-    private HashMap<Integer, List<Roupa>> guardaRoupa = new HashMap<>()as
+    private HashMap<Integer, List<Roupa>> guardaRoupa;
 
     public GuardaRoupa(Integer contador, HashMap<Integer, List<Roupa>> dicionario) {
         this.contador = contador;
@@ -25,16 +25,23 @@ public class GuardaRoupa {
 
     }
 
-    public void mostrarRoupas() {
-        for (Map.Entry<Integer, List<Roupa>> roupaEntry : guardaRoupa.entrySet()) {//
-            for (Roupa roupaEntry1 : roupaEntry.getValue()) {
-                System.out.println("Gaveta " + roupaEntry.getKey() + "-> " + roupaEntry1.getMarca());
+    public void mostrarRoupas(){
+        for (Map.Entry<Integer, List<Roupa>> roupaEntry: guardaRoupa.entrySet()) {//
+            for(Roupa roupaEntry1 : roupaEntry.getValue()){
+                System.out.println("Gaveta "+roupaEntry.getKey()+" Marca-> "+roupaEntry1.getMarca());
+                System.out.println("Gaveta "+roupaEntry.getKey()+" Modelo-> "+roupaEntry1.getModelo());
+                System.out.println("---------------------------------------------------------------");
             }
         }
+    }
 
-        public list<Roupa> devolverRoupas(Integer codigo);
-            guardaRoupa.remove(codigo);
-              return null;
+    public List<Roupa> devolverRoupas(Integer codigo){
+        return guardaRoupa.get(codigo);
 
+
+
+}
+
+    public void guardarRoupas(List<Roupa> roupas) {
     }
 }
